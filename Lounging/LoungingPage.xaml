@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage 	xmlns="http://xamarin.com/schemas/2014/forms" 
+				xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+				xmlns:local="clr-namespace:Lounging" x:Class="Lounging.LoungingPage">
+	<!--<Label 	Text="Welcome to Xamarin Forms!" 
+			VerticalOptions="Center" 
+			HorizontalOptions="Center" />
+	<ContentPage.Content>
+		<RelativeLayout x:Name="Container">
+            <RelativeLayout.Padding>
+                <OnPlatform x:TypeArguments="Thickness"
+                            Android="10, 0, 0, 0"
+                            WinPhone="0, 20, 0, 0"
+                            iOS="0, 20, 0, 0" />
+            </RelativeLayout.Padding>
+            <Label Text="{Binding Title}" />
+            <controls:HybridWebView x:Name="hybridWebView"
+                                    BackgroundColor="White"
+                                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                           Property=Height,
+                                                                                           Factor=.5}"
+                                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                          Property=Width,
+                                                                                          Factor=1}"
+                                    RelativeLayout.XConstraint="{ConstraintExpression Type=Constant,
+                                                                                      Constant=0}"
+                                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                      Property=Height,
+                                                                                      Factor=.5}" />
+        </RelativeLayout>
+	</ContentPage.Content>
+-->
+</ContentPage>

@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Testing CanvasJS with Xamarin C# bridge</title>
+	</head>
+<body style="padding-top:30px;">
+    <h1>Testing CanvasJS with Xamarin C# bridge</h1>
+	<div>
+		<h2><button onclick="sendData('David','Join Lounge');"> Join Lounge </button></h2>
+	</div>
+</body>
+   
+    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    <script type="text/javascript" src="canvasjs.min.js"></script>
+    <script language="javascript">
+    	var chart;
+    	var points;
+        
+        function onViewModelData(model) {
+            var v;
+            if (model.title === undefined) {
+                v = JSON.parse(model);
+            } else {
+                v = model;
+            }
+
+            //Native("dataCallback", v.dataPoints);
+            if (!chart)
+            {
+            	points = v.dataPoints;
+				chart = new CanvasJS.Chart("chartContainer", {
+	                theme: "theme2",
+	                title: {
+	                    text: v.title
+	                },
+	                data: [{ type: "column", dataPoints: v.dataPoints }]
+	            });
+           	}
+           	else
+           	{
+           		chart.options.data = null;
+           		chart.options.data  = [{ type: "column", dataPoints: v.dataPoints }];
+           		//chart.options.data[0].dataPoints = null;
+           		//chart.options.data[0].dataPoints = v.dataPoints;
+           		//update(v.dataPoints);
+	            //chart.data.dataPoints = v.dataPoints;
+           	}
+            
+
+            chart.render();
+            onUpdateFinished();
+
+            Native("dataCallback", "test");
+        }
+        
+        function sendData(o) {
+            Native("dataCallback", o);
+        }
+        
+        function sendData(o,b) {
+            Native("dataCallback", [o, b]);
+        }
+
+        function onUpdateFinished(){
+        	Native("chartUpdated", chart);
+        }
+    </script>
+    
+</html>
+</!DOCTYPE>
