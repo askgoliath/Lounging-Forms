@@ -14,11 +14,12 @@ namespace Lounging
 		private readonly HybridWebView hybrid;
 		public LoungingPage()
 		{
+            InitializeComponent();
 			this.Content = this.hybrid = new HybridWebView
 			{
 				HorizontalOptions = LayoutOptions.FillAndExpand,
 				VerticalOptions = LayoutOptions.FillAndExpand,
-				BackgroundColor = Color.White
+				BackgroundColor = Color.Blue
 			};
 
 			this.hybrid.RegisterCallback("dataCallback", t =>
@@ -44,8 +45,8 @@ namespace Lounging
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
-            this.hybrid.Uri = new Uri("http://lounging-angular.azurewebsites.net/");
-
+            this.hybrid.Uri = new Uri("http://lounging-angular.azurewebsites.net");
+            DisplayAlert("App Loaded", "Lounging app has been loaded", "Cancel");
 			//var assembly = this.GetType().GetTypeInfo().Assembly;
        		//using (var reader = new StreamReader(assembly.GetManifestResourceStream("Lounging.HTML.src.index.html")))
 			//{
