@@ -42,6 +42,9 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebHybridSamplePage.cs" />
+    <Compile Include="Extensions\HybridWebViewExtensions.cs" />
+    <Compile Include="Objects \Lounger.cs" />
+    <Compile Include="Objects \Song.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ExifLib">
@@ -84,6 +87,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Objects \" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
